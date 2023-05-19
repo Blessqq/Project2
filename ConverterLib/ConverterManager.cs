@@ -73,10 +73,5 @@ public class ConverterManager
         SetIValue(physicValue);
         return _myValue.GetConvertedValue(value, from, to);
     }
-
-    // ДОМА - на лабораторных!
-    // дописать приложение
-    // реализовать интерфейс WinFroms / WPF
-    // реализовать 5 классов величин
     
 }
