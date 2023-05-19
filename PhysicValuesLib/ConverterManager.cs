@@ -19,14 +19,14 @@ public class ConverterManager
     {
         Assembly asm = Assembly.LoadFrom("PhysicValuesLib.dll");        // создание сборки из библиотеки классов
         Type[] types = asm.GetTypes();                                  // выгрузка классов в массив
-        foreach (Type type in types)                                    // перебираем классы и интерфейсы
+        foreach (Type type in types)                                   
         {
             if ((type.IsInterface == false)
                 && (type.IsAbstract == false)
-                && (type.GetInterface("IValue") != null))               // не добавляем абстрактные классы и интерфейсы
+                && (type.GetInterface("IValue") != null))              
             {
                 IValue value = (IValue)Activator.CreateInstance(type);
-                _physicValuesList.Add(value);                           // подгружаем этот класс в список уроков                        
+                _physicValuesList.Add(value);                                               
             }
         }
     }
@@ -68,11 +68,6 @@ public class ConverterManager
     {
         SetIValue(physicValue);
         return _myValue.GetConvertedValue(value, from, to);
-    }
-
-    // ДОМА - на лабораторных!
-    // дописать приложение
-    // реализовать интерфейс WinFroms / WPF
-    // реализовать 5 классов величин
+     }
     
 }
